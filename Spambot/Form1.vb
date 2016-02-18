@@ -1,7 +1,5 @@
 ﻿Public Class Form1
-    'websites that may help
-    'for the looping set times http://www.wiseowl.co.uk/blog/s193/vba-for-next.htm
-    'need some varbiles
+    'declare the varbiles
     Private sent As Integer
     Private plus1 As Integer
     Private count As Integer
