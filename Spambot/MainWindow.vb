@@ -1,4 +1,5 @@
-﻿Public Class Form1
+﻿Public Class MainWindow
+    'made by Ryan Q
     'declare the varbiles
     Private sent As Integer
     Private plus1 As Integer
