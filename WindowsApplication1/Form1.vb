@@ -8,12 +8,15 @@
 
     Private Sub Start_Click(sender As System.Object, e As System.EventArgs) Handles Start.Click
         Delay.Enabled = True
+        If amount.Value = -1 Then
+            ProgressBar1.Maximum = 1
+        Else
+            ProgressBar1.Maximum = amount.Value
+        End If
     End Sub
 
     Private Sub Delay_Tick(sender As System.Object, e As System.EventArgs) Handles Delay.Tick
         Delay.Enabled = False
-        sent = 0
-        count = 0
         Begin.Enabled = True
     End Sub
 
@@ -21,7 +24,13 @@
     Private Sub Begin_Tick(sender As System.Object, e As System.EventArgs) Handles Begin.Tick
         sentcounter.Text = count.ToString() + " times"
         plus1 = Integer.Parse(add1.Text)
-        If sent < amount.Value Then
+        ProgressBar1.Value = sent
+        If amount.Value = -1 Then
+            SendKeys.Send(Message.Text)
+            SendKeys.Send("{ENTER}")
+            count = count + plus1
+
+        ElseIf sent < amount.Value Then
             SendKeys.Send(Message.Text)
             SendKeys.Send("{ENTER}")
             sent = sent + plus1
@@ -32,6 +41,12 @@
     End Sub
 
     Private Sub pause_Click(sender As Object, e As EventArgs) Handles pause.Click
+        Begin.Enabled = False
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        sent = 0
+        count = 0
         Begin.Enabled = False
     End Sub
 End Class

@@ -39,14 +39,18 @@ Partial Class Form1
         Me.sentcount = New System.Windows.Forms.MaskedTextBox()
         Me.tcount = New System.Windows.Forms.MaskedTextBox()
         Me.sentcounter = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.amount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pause
         '
-        Me.pause.Location = New System.Drawing.Point(17, 158)
+        Me.pause.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pause.Location = New System.Drawing.Point(12, 155)
         Me.pause.Name = "pause"
-        Me.pause.Size = New System.Drawing.Size(190, 51)
+        Me.pause.Size = New System.Drawing.Size(191, 63)
         Me.pause.TabIndex = 4
         Me.pause.Text = "Stop the spam bot"
         Me.pause.UseVisualStyleBackColor = True
@@ -106,7 +110,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 135)
+        Me.Label4.Location = New System.Drawing.Point(12, 127)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(345, 17)
         Me.Label4.TabIndex = 105
@@ -124,11 +128,12 @@ Partial Class Form1
         '
         'Start
         '
-        Me.Start.Location = New System.Drawing.Point(227, 158)
+        Me.Start.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Start.Location = New System.Drawing.Point(214, 155)
         Me.Start.Name = "Start"
-        Me.Start.Size = New System.Drawing.Size(190, 51)
+        Me.Start.Size = New System.Drawing.Size(191, 63)
         Me.Start.TabIndex = 106
-        Me.Start.Text = "Start the spam bot"
+        Me.Start.Text = "Start The Spambot"
         Me.Start.UseVisualStyleBackColor = True
         '
         'Begin
@@ -148,7 +153,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 227)
+        Me.Label3.Location = New System.Drawing.Point(12, 243)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(142, 17)
         Me.Label3.TabIndex = 108
@@ -176,18 +181,48 @@ Partial Class Form1
         '
         Me.sentcounter.AutoSize = True
         Me.sentcounter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sentcounter.Location = New System.Drawing.Point(160, 227)
+        Me.sentcounter.Location = New System.Drawing.Point(165, 243)
         Me.sentcounter.Name = "sentcounter"
-        Me.sentcounter.Size = New System.Drawing.Size(12, 17)
+        Me.sentcounter.Size = New System.Drawing.Size(57, 17)
         Me.sentcounter.TabIndex = 113
-        Me.sentcounter.Text = " "
+        Me.sentcounter.Text = " 0 times"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(239, 233)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(166, 36)
+        Me.Button1.TabIndex = 114
+        Me.Button1.Text = "Clear Counters"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(15, 292)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(390, 23)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+        Me.ProgressBar1.TabIndex = 115
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(12, 272)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(301, 17)
+        Me.Label6.TabIndex = 116
+        Me.Label6.Text = "Amount of spam sent in form of a progress bar"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(429, 260)
-        Me.Controls.Add(Me.sentcounter)
+        Me.ClientSize = New System.Drawing.Size(417, 326)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.tcount)
         Me.Controls.Add(Me.sentcount)
         Me.Controls.Add(Me.Label3)
@@ -200,6 +235,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Message)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pause)
+        Me.Controls.Add(Me.sentcounter)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.amount, System.ComponentModel.ISupportInitialize).EndInit()
@@ -235,4 +271,7 @@ Partial Class Form1
     Friend WithEvents sentcount As System.Windows.Forms.MaskedTextBox
     Friend WithEvents tcount As System.Windows.Forms.MaskedTextBox
     Friend WithEvents sentcounter As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Label6 As Label
 End Class
