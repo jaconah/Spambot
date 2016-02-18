@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class MainWindow
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -237,7 +237,7 @@ Partial Class MainWindow
         Me.Controls.Add(Me.pause)
         Me.Controls.Add(Me.sentcounter)
         Me.Name = "Form1"
-        Me.Text = "Spambot - Made by Ryan"
+        Me.Text = "Form1"
         CType(Me.amount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
