@@ -21,9 +21,12 @@
 
     'Start loop when aftter button is pressed and the delay  timmer is over
     Private Sub Begin_Tick(sender As System.Object, e As System.EventArgs) Handles Begin.Tick
+
         sentcounter.Text = count.ToString() + " times"
         plus1 = Integer.Parse(add1.Text)
         ProgressBar1.Value = sent
+        
+
         If amount.Value = -1 Then
             SendKeys.Send(Message.Text)
             SendKeys.Send("{ENTER}")
